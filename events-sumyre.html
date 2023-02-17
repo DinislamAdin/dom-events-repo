@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event summary</title>
+</head>
+
+<body>
+    <h1>final dom events handler </h1>
+    <h3 id="handler-status">defoult text</h3>
+    <p id = "input-text-display">defoult input text</p>
+    <input id="input-field" type="text">
+    <button id="btn-update">Update</button>
+    <br>
+    <button onclick="handleOnClick()">handler event by add function</button>
+    <button id="event-lesener">handle event by addeventlesener</button>
+
+
+
+    <script>
+        function handleOnClick() {
+            const handlerStatus = document.getElementById('handler-status');
+            handlerStatus.innerText = 'my name is handler status';
+        }
+
+        document.getElementById('event-lesener').addEventListener('click', function () {
+            const handlerStatus = document.getElementById('handler-status');
+            handlerStatus.innerText = 'text updated by addeventlistener button';
+        })
+
+        document.getElementById('btn-update').addEventListener('click', function () {
+            const inputField = document.getElementById("input-field");
+            const inputText = inputField.value;
+
+            const p = document.getElementById('input-text-display');
+            p.innerText= inputText;
+            inputText.value = '';
+        })
+    </script>
+</body>
+
+</html>
